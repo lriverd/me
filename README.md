@@ -28,7 +28,7 @@ Portafolio personal desarrollado con React, TypeScript, Tailwind CSS y Vite. Dis
 
 ## 🛠️ Instalación
 
-\`\`\`bash
+```bash
 # Instalar dependencias
 npm install
 
@@ -40,11 +40,11 @@ npm run build
 
 # Preview
 npm run preview
-\`\`\`
+```
 
 ## 📁 Estructura del Proyecto
 
-\`\`\`
+```
 src/
 ├── components/
 │   ├── layout/          # Header, Footer
@@ -57,7 +57,7 @@ src/
 ├── App.tsx
 ├── main.tsx
 └── index.css
-\`\`\`
+```
 
 ## 🎨 Secciones
 
