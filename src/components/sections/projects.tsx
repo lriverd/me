@@ -1,0 +1,126 @@
+"use client"
+
+import { ExternalLink, Github } from "lucide-react"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+
+const projects = [
+  {
+    title: "E-commerce Platform",
+    description: "Plataforma de comercio electrónico completa con carrito, pagos y panel de administración",
+    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
+    tags: ["React", "Node.js", "MongoDB", "Stripe"],
+    github: "https://github.com",
+    demo: "https://example.com",
+  },
+  {
+    title: "Task Management App",
+    description: "Aplicación de gestión de tareas con drag & drop, colaboración en tiempo real",
+    image: "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?w=800&h=600&fit=crop",
+    tags: ["TypeScript", "Next.js", "Prisma", "PostgreSQL"],
+    github: "https://github.com",
+    demo: "https://example.com",
+  },
+  {
+    title: "Weather Dashboard",
+    description: "Dashboard interactivo del clima con gráficos y pronósticos detallados",
+    image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=600&fit=crop",
+    tags: ["React", "Chart.js", "API", "Tailwind"],
+    github: "https://github.com",
+    demo: "https://example.com",
+  },
+  {
+    title: "Social Media Clone",
+    description: "Red social con posts, likes, comentarios y sistema de seguimiento",
+    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop",
+    tags: ["Vue.js", "Firebase", "Vuetify"],
+    github: "https://github.com",
+    demo: "https://example.com",
+  },
+  {
+    title: "Portfolio Builder",
+    description: "Constructor de portafolios con plantillas personalizables y exportación",
+    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
+    tags: ["React", "TypeScript", "Tailwind"],
+    github: "https://github.com",
+    demo: "https://example.com",
+  },
+  {
+    title: "Fitness Tracker",
+    description: "Aplicación de seguimiento de ejercicios con estadísticas y metas",
+    image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=600&fit=crop",
+    tags: ["React Native", "Expo", "Redux"],
+    github: "https://github.com",
+    demo: "https://example.com",
+  },
+]
+
+export function Projects() {
+  return (
+    <section id="projects" className="py-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto space-y-12">
+          <div className="text-center space-y-4">
+            <h2 className="text-3xl sm:text-4xl font-bold">Proyectos</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Una selección de mis proyectos más destacados
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((project, index) => (
+              <Card
+                key={index}
+                className="overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+              >
+                <div className="aspect-video overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                  />
+                </div>
+                <CardHeader>
+                  <CardTitle>{project.title}</CardTitle>
+                  <CardDescription>{project.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag, i) => (
+                      <Badge key={i} variant="secondary">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+                <CardFooter className="gap-2">
+                  <Button variant="outline" size="sm" asChild>
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github className="h-4 w-4 mr-2" />
+                      Código
+                    </a>
+                  </Button>
+                  <Button size="sm" asChild>
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                      Demo
+                    </a>
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

@@ -1,73 +1,80 @@
-# React + TypeScript + Vite
+# Luis Riveros - Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portafolio personal desarrollado con React, TypeScript, Tailwind CSS y Vite. Diseño moderno, responsivo y optimizado para SEO.
 
-Currently, two official plugins are available:
+## 🚀 Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚡ **Vite** - Build tool ultrarrápido
+- ⚛️ **React 19** - Última versión de React
+- 🎨 **Tailwind CSS** - Framework CSS utility-first
+- 🎭 **Radix UI** - Componentes accesibles y sin estilos
+- 🌗 **Dark Mode** - Soporte para tema oscuro/claro
+- 📱 **Responsive** - Diseño adaptable a todos los dispositivos
+- 🎯 **TypeScript** - Tipado estático para mayor seguridad
+- 📝 **React Hook Form + Zod** - Validación de formularios
+- 🔍 **SEO Optimizado** - Meta tags y estructura semántica
 
-## React Compiler
+## 📦 Tecnologías
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- React 19.2.0
+- TypeScript
+- Vite 7.1.12
+- Tailwind CSS
+- Radix UI (Button, Card, Badge, Input, Textarea, Sheet, Form, Label)
+- next-themes (gestión de temas)
+- React Hook Form + Zod (validación)
+- Lucide React (iconos)
+- Sonner (notificaciones)
 
-## Expanding the ESLint configuration
+## 🛠️ Instalación
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+\`\`\`bash
+# Instalar dependencias
+npm install
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# Desarrollo
+npm run dev
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# Build
+npm run build
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# Preview
+npm run preview
+\`\`\`
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📁 Estructura del Proyecto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+\`\`\`
+src/
+├── components/
+│   ├── layout/          # Header, Footer
+│   ├── sections/        # Hero, About, Projects, Skills, Contact
+│   ├── ui/              # Componentes Radix UI
+│   ├── theme-provider.tsx
+│   └── theme-toggle.tsx
+├── lib/
+│   └── utils.ts         # Funciones utilitarias
+├── App.tsx
+├── main.tsx
+└── index.css
+\`\`\`
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🎨 Secciones
+
+1. **Hero** - Introducción con gradient animado y CTAs
+2. **About** - Intereses (cards) y experiencia (timeline)
+3. **Projects** - Grid de proyectos con hover effects
+4. **Skills** - Barras de progreso y badges de tecnologías
+5. **Contact** - Formulario con validación
+
+## 🌐 Despliegue
+
+El proyecto está listo para ser desplegado en plataformas como:
+- Vercel
+- Netlify
+- GitHub Pages
+- Cloudflare Pages
+
+## 📄 Licencia
+
+© 2025 Luis Riveros. Todos los derechos reservados.
