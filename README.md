@@ -13,18 +13,20 @@ Portafolio personal desarrollado con React, TypeScript, Tailwind CSS y Vite. Dis
 - 🎯 **TypeScript** - Tipado estático para mayor seguridad
 - 📝 **React Hook Form + Zod** - Validación de formularios
 - 🔍 **SEO Optimizado** - Meta tags y estructura semántica
+- 🔥 **Firebase** - Hosting y Analytics integrados
 
 ## 📦 Tecnologías
 
 - React 19.2.0
 - TypeScript
 - Vite 7.1.12
-- Tailwind CSS
+- Tailwind CSS 4
 - Radix UI (Button, Card, Badge, Input, Textarea, Sheet, Form, Label)
 - next-themes (gestión de temas)
 - React Hook Form + Zod (validación)
 - Lucide React (iconos)
 - Sonner (notificaciones)
+- Firebase (Hosting + Analytics)
 
 ## 🛠️ Instalación
 
@@ -40,6 +42,9 @@ npm run build
 
 # Preview
 npm run preview
+
+# Deploy a Firebase
+npm run deploy
 ```
 
 ## 📁 Estructura del Proyecto
@@ -69,11 +74,36 @@ src/
 
 ## 🌐 Despliegue
 
-El proyecto está listo para ser desplegado en plataformas como:
+### Deploy en Producción
+
+La aplicación está desplegada en Firebase Hosting:
+
+**🔗 URL en Vivo**: https://luriv-dev.web.app
+
+**📊 Firebase Console**: https://console.firebase.google.com/project/luriv-dev
+
+### Comandos de Deploy
+
+```bash
+# Deploy completo (build + firebase deploy)
+npm run deploy
+
+# Solo build
+npm run build
+
+# Solo deploy (requiere build previo)
+firebase deploy --only hosting
+```
+
+### Otras Plataformas Compatibles
+
+El proyecto también puede desplegarse en:
 - Vercel
 - Netlify
 - GitHub Pages
 - Cloudflare Pages
+
+Ver [DEPLOY.md](./DEPLOY.md) para instrucciones detalladas de despliegue.
 
 ## 📄 Licencia
 

@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.tsx'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from '@/components/ui/toaster'
+import '@/lib/firebase' // Initialize Firebase
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
