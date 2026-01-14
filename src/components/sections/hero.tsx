@@ -10,10 +10,7 @@ export function Hero() {
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <div className="space-y-4">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-              Hola, soy{" "}
-              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient">
-                Luis Riveros
-              </span>
+              Hola, soy Luis Riveros
             </h1>
             <p className="text-xl sm:text-2xl text-muted-foreground max-w-2xl mx-auto">
               Desarrollador Full Stack apasionado por crear experiencias web modernas y escalables
@@ -45,7 +42,7 @@ export function Hero() {
             </Button>
             <Button variant="ghost" size="icon" asChild>
               <a
-                href="https://linkedin.com/in/luis-riveros"
+                href="https://linkedin.com/in/lc-riverosd"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -54,7 +51,7 @@ export function Hero() {
               </a>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              <a href="mailto:lriveros@example.com">
+              <a href="mailto:lc.riverosd@gmail.com">
                 <Mail className="h-5 w-5" />
                 <span className="sr-only">Email</span>
               </a>

@@ -37,22 +37,21 @@ const skillCategories = [
 ]
 
 const technologies = [
+  "Java",
+  "Springboot",
+  "Golang",
+  "Flutter",
   "React",
   "TypeScript",
-  "Next.js",
-  "Node.js",
-  "Express",
   "MongoDB",
   "PostgreSQL",
-  "Tailwind CSS",
-  "GraphQL",
   "Docker",
-  "AWS",
   "Git",
-  "Prisma",
   "Redux",
-  "Vue.js",
   "Vite",
+  "Redis",
+  "Firebase",
+  "Node.js",
 ]
 
 export function Skills() {
@@ -67,36 +66,9 @@ export function Skills() {
             </p>
           </div>
 
-          {/* Skill Bars */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {skillCategories.map((category, index) => (
-              <Card key={index}>
-                <CardHeader>
-                  <CardTitle>{category.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  {category.skills.map((skill, i) => (
-                    <div key={i} className="space-y-2">
-                      <div className="flex justify-between text-sm">
-                        <span className="font-medium">{skill.name}</span>
-                        <span className="text-muted-foreground">{skill.level}%</span>
-                      </div>
-                      <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                        <div
-                          className="h-full bg-gradient-to-r from-primary to-accent transition-all duration-1000"
-                          style={{ width: `${skill.level}%` }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </CardContent>
-              </Card>
-            ))}
-          </div>
 
           {/* Technology Badges */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-center">Tecnologías</h3>
             <div className="flex flex-wrap justify-center gap-3">
               {technologies.map((tech, index) => (
                 <Badge

@@ -7,52 +7,19 @@ import { Button } from "@/components/ui/button"
 
 const projects = [
   {
-    title: "E-commerce Platform",
-    description: "Plataforma de comercio electrónico completa con carrito, pagos y panel de administración",
+    title: "Monopoly Exchange",
+    description: "Plataforma de intercambio de cartas de Monopoly Go con autenticación, gestión de usuarios y sistema de ofertas",
     image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
-    tags: ["React", "Node.js", "MongoDB", "Stripe"],
-    github: "https://github.com",
-    demo: "https://example.com",
+    tags: ["React", "Node.js", "MongoDB", "Golang", "Firebase"],
+    github: "https://github.com/lriverd/card-exchange-web",
+    demo: "https://go-card-exchange.web.app/",
   },
   {
-    title: "Task Management App",
-    description: "Aplicación de gestión de tareas con drag & drop, colaboración en tiempo real",
+    title: "Farmacias de Turno - Chile",
+    description: "Aplicacion para encontrar farmacias de turno en Chile con geolocalización y filtros avanzados",
     image: "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?w=800&h=600&fit=crop",
-    tags: ["TypeScript", "Next.js", "Prisma", "PostgreSQL"],
-    github: "https://github.com",
-    demo: "https://example.com",
-  },
-  {
-    title: "Weather Dashboard",
-    description: "Dashboard interactivo del clima con gráficos y pronósticos detallados",
-    image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=600&fit=crop",
-    tags: ["React", "Chart.js", "API", "Tailwind"],
-    github: "https://github.com",
-    demo: "https://example.com",
-  },
-  {
-    title: "Social Media Clone",
-    description: "Red social con posts, likes, comentarios y sistema de seguimiento",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop",
-    tags: ["Vue.js", "Firebase", "Vuetify"],
-    github: "https://github.com",
-    demo: "https://example.com",
-  },
-  {
-    title: "Portfolio Builder",
-    description: "Constructor de portafolios con plantillas personalizables y exportación",
-    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
-    tags: ["React", "TypeScript", "Tailwind"],
-    github: "https://github.com",
-    demo: "https://example.com",
-  },
-  {
-    title: "Fitness Tracker",
-    description: "Aplicación de seguimiento de ejercicios con estadísticas y metas",
-    image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=600&fit=crop",
-    tags: ["React Native", "Expo", "Redux"],
-    github: "https://github.com",
-    demo: "https://example.com",
+    tags: ["Flutter"],
+    demo: "https://play.google.com/store/apps/details?id=cl.duamit.farmaciaap",
   },
 ]
 
@@ -95,6 +62,7 @@ export function Projects() {
                   </div>
                 </CardContent>
                 <CardFooter className="gap-2">
+                  {project.github && (
                   <Button variant="outline" size="sm" asChild>
                     <a
                       href={project.github}
@@ -105,6 +73,7 @@ export function Projects() {
                       Código
                     </a>
                   </Button>
+                  )}
                   <Button size="sm" asChild>
                     <a
                       href={project.demo}

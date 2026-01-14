@@ -7,12 +7,7 @@ const interests = [
   {
     icon: Code,
     title: "Desarrollo Web",
-    description: "Creación de aplicaciones web modernas con React, TypeScript y Node.js",
-  },
-  {
-    icon: Palette,
-    title: "UI/UX Design",
-    description: "Diseño de interfaces intuitivas y experiencias de usuario excepcionales",
+    description: "Creación de aplicaciones fullstack con tecnologías modernas",
   },
   {
     icon: Zap,
@@ -23,23 +18,29 @@ const interests = [
 
 const experiences = [
   {
-    year: "2023 - Presente",
-    title: "Senior Full Stack Developer",
-    company: "Tech Company",
-    description: "Desarrollo de aplicaciones web escalables y mantenimiento de infraestructura cloud",
+    year: "Noviembre 2020 - Presente",
+    title: "Technical Lead / Gestor de desarrollo",
+    company: "Banco Internacional",
+    description: "Desarrollo de servicios y aplicaciones web para clientes banca persona y empresa",
   },
   {
-    year: "2021 - 2023",
-    title: "Full Stack Developer",
-    company: "Startup Inc",
-    description: "Implementación de features y mejoras en plataforma SaaS",
+    year: "Enero 2016 - Octubre 2020",
+    title: "Ingeniero de Software",
+    company: "Imagemaker S.A.",
+    description: "Trabajo principalmente en 2 Clientes: Banco de Chile y Scotiabank Chile. Asociado al desarrollo de aplicaciones web empresas utilizando tecnologías como Java, Springboot, AngularJS, React, Node.js y bases de datos SQL. Participando en todas las etapas del ciclo de vida del desarrollo de software, desde la recopilación de requisitos hasta la implementación y el mantenimiento.",
   },
   {
-    year: "2019 - 2021",
-    title: "Frontend Developer",
-    company: "Digital Agency",
-    description: "Desarrollo de sitios web y aplicaciones para diversos clientes",
+    year: "Diciembre 2014 - Octubre 2015",
+    title: "Analyst",
+    company: "TransUnion",
+    description: "Desarrollo de webservices internos para la gestión de datos crediticios.",
   },
+  {
+    year: "Enero 2014 - Septiembre 2014",
+    title: "Consultor",
+    company: "Solu4B",
+    description: "Diseño y desarrollo de proyecto de automatización de informes para Banco Estado, en el servicio de administración de tarjetas. Encargado de control de tiempos, además de la obtención, documentación e implementación de requisitos en contacto directo con cliente.Presentando soluciones de optimización, migración de arquitectura y tecnologías"
+  }
 ]
 
 export function About() {

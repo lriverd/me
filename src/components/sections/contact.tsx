@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
-import { Mail, MapPin, Phone } from "lucide-react"
+import { Mail, MapPin, Linkedin } from "lucide-react"
 import { toast } from "sonner"
 
 import { Button } from "@/components/ui/button"
@@ -38,19 +38,19 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "lriveros@example.com",
-    href: "mailto:lriveros@example.com",
+    value: "lc.riverosd@gmail.com",
+    href: "mailto:lc.riverosd@gmail.com",
   },
   {
-    icon: Phone,
-    title: "Teléfono",
-    value: "+56 9 1234 5678",
-    href: "tel:+56912345678",
+    icon: Linkedin,
+    title: "LinkedIn",
+    value: "lc-riverosd",
+    href: "https://linkedin.com/in/lriverosd",
   },
   {
     icon: MapPin,
     title: "Ubicación",
-    value: "Santiago, Chile",
+    value: "Santa Cruz, Chile",
   },
 ]
 
@@ -88,9 +88,14 @@ export function Contact() {
             {contactInfo.map((info, index) => (
               <Card key={index} className="text-center">
                 <CardContent className="pt-6">
+                  {
+                    info.icon &&
+                    
                   <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                     <info.icon className="h-6 w-6 text-primary" />
                   </div>
+                  
+                  }
                   <h3 className="font-semibold mb-2">{info.title}</h3>
                   {info.href ? (
                     <a
@@ -107,81 +112,7 @@ export function Contact() {
             ))}
           </div>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Envíame un mensaje</CardTitle>
-              <CardDescription>
-                Completa el formulario y te responderé lo antes posible
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <FormField
-                      control={form.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Nombre</FormLabel>
-                          <FormControl>
-                            <Input placeholder="Tu nombre" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Email</FormLabel>
-                          <FormControl>
-                            <Input placeholder="tu@email.com" type="email" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                  </div>
-                  <FormField
-                    control={form.control}
-                    name="subject"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Asunto</FormLabel>
-                        <FormControl>
-                          <Input placeholder="¿De qué quieres hablar?" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Mensaje</FormLabel>
-                        <FormControl>
-                          <Textarea
-                            placeholder="Cuéntame sobre tu proyecto..."
-                            className="min-h-[150px]"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <Button type="submit" size="lg" className="w-full md:w-auto">
-                    Enviar Mensaje
-                  </Button>
-                </form>
-              </Form>
-            </CardContent>
-          </Card>
+          
         </div>
       </div>
     </section>
