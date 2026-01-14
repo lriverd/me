@@ -1,40 +1,6 @@
 "use client"
 
 import { Badge } from "@/components/ui/badge"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-
-const skillCategories = [
-  {
-    title: "Frontend",
-    skills: [
-      { name: "React", level: 95 },
-      { name: "TypeScript", level: 90 },
-      { name: "Next.js", level: 88 },
-      { name: "Tailwind CSS", level: 92 },
-      { name: "Vue.js", level: 75 },
-    ],
-  },
-  {
-    title: "Backend",
-    skills: [
-      { name: "Node.js", level: 90 },
-      { name: "Express", level: 85 },
-      { name: "PostgreSQL", level: 82 },
-      { name: "MongoDB", level: 88 },
-      { name: "GraphQL", level: 78 },
-    ],
-  },
-  {
-    title: "DevOps & Tools",
-    skills: [
-      { name: "Git", level: 92 },
-      { name: "Docker", level: 80 },
-      { name: "AWS", level: 75 },
-      { name: "CI/CD", level: 78 },
-      { name: "Linux", level: 85 },
-    ],
-  },
-]
 
 const technologies = [
   "Java",

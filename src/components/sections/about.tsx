@@ -1,6 +1,6 @@
 "use client"
 
-import { Code, Palette, Zap } from "lucide-react"
+import { Code, Zap } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 const interests = [
