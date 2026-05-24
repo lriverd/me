@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es-419">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Solicitud de eliminación de cuenta - PescaApp">
+    <title>Eliminar Cuenta - PescaApp</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #E0F7FA 0%, #4DD0E1 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 560px;
+            width: 100%;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 36px;
+            padding-bottom: 24px;
+            border-bottom: 2px solid #E0F7FA;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 16px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #00BCD4, #0097A7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        h1 {
+            color: #00838F;
+            font-size: 26px;
+            margin-bottom: 6px;
+        }
+
+        .app-name {
+            color: #4DD0E1;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .info-box {
+            background-color: #FFF8E1;
+            border-left: 4px solid #FFB300;
+            padding: 14px 16px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            color: #6D4C00;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 6px;
+        }
+
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1.5px solid #B2EBF2;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+            color: #333;
+            background: #FAFAFA;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+        }
+
+        input[type="email"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #00BCD4;
+            box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.15);
+            background: white;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2300838F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            padding-right: 38px;
+        }
+
+        .optional {
+            font-weight: 400;
+            color: #999;
+            font-size: 12px;
+            margin-left: 4px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #00BCD4, #0097A7);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.1s;
+            margin-top: 8px;
+        }
+
+        .btn-submit:hover:not(:disabled) {
+            opacity: 0.9;
+        }
+
+        .btn-submit:active:not(:disabled) {
+            transform: scale(0.99);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .error-msg {
+            color: #D32F2F;
+            font-size: 13px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        /* Success state */
+        .success-view {
+            display: none;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .success-icon {
+            font-size: 56px;
+            margin-bottom: 16px;
+        }
+
+        .success-view h2 {
+            color: #00838F;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .success-view p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* Loading spinner */
+        .spinner {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255,255,255,0.4);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .footer {
+            margin-top: 32px;
+            padding-top: 20px;
+            border-top: 1px solid #E0F7FA;
+            text-align: center;
+            color: #999;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 24px 20px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🎣</div>
+            <h1>Eliminar Cuenta</h1>
+            <p class="app-name">PescaApp</p>
+        </div>
+
+        <!-- Form view -->
+        <div id="formView">
+            <div class="info-box">
+                ⚠️ Esta acción es <strong>irreversible</strong>. Una vez procesada tu solicitud, todos tus datos serán eliminados de forma permanente.
+            </div>
+
+            <form id="deleteForm" novalidate>
+                <div class="form-group">
+                    <label for="email">Correo electrónico de la cuenta</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="tucorreo@ejemplo.com"
+                        required
+                        autocomplete="email"
+                    />
+                    <span class="error-msg" id="emailError">Por favor ingresa un correo válido.</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="reason">Motivo de eliminación</label>
+                    <select id="reason" name="reason" required>
+                        <option value="" disabled selected>Selecciona un motivo...</option>
+                        <option value="no_longer_use">Ya no uso la aplicación</option>
+                        <option value="privacy_concerns">Preocupaciones de privacidad</option>
+                        <option value="bad_experience">Mala experiencia con la app</option>
+                        <option value="switching_app">Cambiaré a otra aplicación</option>
+                        <option value="too_many_ads">Demasiada publicidad</option>
+                        <option value="other">Otro motivo</option>
+                    </select>
+                    <span class="error-msg" id="reasonError">Por favor selecciona un motivo.</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="details">Detalles adicionales <span class="optional">(opcional)</span></label>
+                    <textarea
+                        id="details"
+                        name="details"
+                        placeholder="Puedes agregar más información si lo deseas..."
+                        maxlength="500"
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit" id="submitBtn">
+                    Enviar solicitud de eliminación
+                </button>
+            </form>
+        </div>
+
+        <!-- Success view -->
+        <div class="success-view" id="successView">
+            <div class="success-icon">✅</div>
+            <h2>Solicitud recibida</h2>
+            <p>
+                Hemos recibido tu solicitud de eliminación de cuenta.<br><br>
+                Procesaremos tu solicitud en un plazo de <strong>hasta 30 días hábiles</strong>.
+                Recibirás una confirmación en el correo registrado una vez completado el proceso.
+            </p>
+        </div>
+
+        <div class="footer">
+            PescaApp &copy; <span id="year"></span> — Todos los derechos reservados
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCh8-ShRYLH9o0DRCly4fweSJluNzhKgFY",
+            authDomain: "luriv-dev.firebaseapp.com",
+            projectId: "luriv-dev",
+            storageBucket: "luriv-dev.firebasestorage.app",
+            messagingSenderId: "334128577143",
+            appId: "1:334128577143:web:40fb4a455cb4032166e472"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        const form = document.getElementById("deleteForm");
+        const submitBtn = document.getElementById("submitBtn");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById("email").value.trim();
+            const reason = document.getElementById("reason").value;
+            const details = document.getElementById("details").value.trim();
+
+            // Reset errors
+            document.getElementById("emailError").style.display = "none";
+            document.getElementById("reasonError").style.display = "none";
+
+            // Validate
+            let valid = true;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email || !emailRegex.test(email)) {
+                document.getElementById("emailError").style.display = "block";
+                valid = false;
+            }
+            if (!reason) {
+                document.getElementById("reasonError").style.display = "block";
+                valid = false;
+            }
+            if (!valid) return;
+
+            // Submit
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner"></span>Enviando...';
+
+            try {
+                await addDoc(collection(db, "pescaap_deletion_requests"), {
+                    email,
+                    reason,
+                    details: details || null,
+                    status: "pending",
+                    createdAt: serverTimestamp()
+                });
+
+                document.getElementById("formView").style.display = "none";
+                document.getElementById("successView").style.display = "block";
+            } catch (err) {
+                console.error(err);
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = "Enviar solicitud de eliminación";
+                alert("Ocurrió un error al enviar tu solicitud. Por favor intenta nuevamente.");
+            }
+        });
+    </script>
+</body>
+</html>
